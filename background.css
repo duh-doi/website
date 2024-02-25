@@ -1,0 +1,124 @@
+@font-face {
+  font-family: "Aesthetic";
+  src: url('Fonts/Aesthetic/Aesthetic-Regular.otf') format('embedded-opentype'),
+       url('Fonts/Aesthetic/Aesthetic-Regular.ttf') format('truetype'),
+       url('Fonts/Aesthetic/Aesthetic-Regular.woff') format('woff'),
+       url('Fonts/Aesthetic/Aesthetic-Regular.woff2') format('woff2')
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#grad1 {
+  height: 100vh; /* viewport height meaning viewable screen's height, so 100vh is 100% of the viewable screens height */
+  width: 100vw;  /* viewport width meaning viewable screen's width, so 100vw is 100% of the viewable screens width */
+  position: relative;
+  overflow: hidden;
+
+  background: radial-gradient(72.25% 78.54% at 50% 47.43%, /* horiz size vert size at this horiz position vert position*/
+  rgba(247, 207, 106, 0.357) 18.63%, /* red, green, blue, alpha (meaning opacity) at 18.63% of the screen in the shape of the radial */
+  rgba(214, 167, 0, 0.3145) 34%, /* red, green, blue, alpha (meaning opacity) at 34% of the screen in the shape of the radial */
+  rgba(247, 173, 63, 0.5695) 46.5%,  /* red, green, blue, alpha (meaning opacity) at 46.5% of the screen in the shape of the radial */
+  rgba(249, 178, 73, 0.4505) 63%, /* red, green, blue, alpha (meaning opacity) at 63% of the screen in the shape of the radial */
+  rgba(245, 160, 82, 0.391) 72.74%, /* red, green, blue, alpha (meaning opacity) at 72.74% of the screen in the shape of the radial */
+  rgba(230, 157, 17, 0.2805) 83%, /* red, green, blue, alpha (meaning opacity) at 83% of the screen in the shape of the radial */
+  rgba(230, 157, 17, 0.2805) 100%); /* red, green, blue, alpha (meaning opacity) at 100% of the screen in the shape of the radial */
+}
+
+.flex-container-name {
+  display: flex; /* intiates flex axixs (horizontal and vertical) with the main axis automatically being set to horizontal */
+  
+  height: 100vh; /* viewport height meaning viewable screen's height, so 100vh is 100% of the viewable screens height */
+  justify-content: center; /* for horizontal alignment */
+  align-items: center; /* for vertical alignment */
+}
+
+.name {
+  font-family: "Aesthetic";
+  filter: drop-shadow(0 12px 2px rgba(250, 209, 148, 1));
+  color: white;
+  font-size: 100px
+}
+
+nav {
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+  bottom: 90%;
+  right: 7%;
+}
+
+.ham_menu {
+  height: 50px;
+  width: 50px;
+  margin-left: 100%;
+  position: relative;
+  transition: .955s;
+}
+
+.ham_menu span {
+  height: 5px;
+  width: 100%;
+  background-color: #D4B48D;
+  border-radius: 25px;
+  position: absolute;
+  right: 15%;
+  /*transform: translate(-50%, -50%); /*Moves menu horiz (neg sign = to the left) and vert (neg sign = up) */
+}
+
+.ham_menu span:nth-child(2) {
+  top: 25%;
+}
+
+.ham_menu span:nth-child(3) {
+  top: 50%;
+}
+
+.ham_menu.active span{
+  visibility: hidden;
+  opacity: 0;
+  transform: scaleX(1.5);
+  transition: visibility 0s .955s, opacity .955s linear, transform .955s linear;
+}
+
+.open_menu {
+  height: 100vh;
+  width: 100%;
+  max-width: 350px;
+  right: -350px;
+  opacity: 0;
+  overflow: hidden;
+  visibility: hidden;
+  position: absolute;
+  background: rgba(252, 148, 72, 0.31);
+  transition: .955s ease-in-out;
+}
+
+.menu_categories {
+  font-family: "Aesthetic";
+  font-size: 40px;
+  line-height: 130px;
+  margin-top: 20%;
+  text-align: center;
+}
+
+.menu_categories a{
+  display: block;
+  text-decoration: none;
+  color:#843F00
+}
+
+.menu_categories a:hover{
+  color: whitesmoke;
+  text-shadow: 5px 5px 50px rgb(192, 145, 102), 5px 5px 50px rgb(194, 122, 54);
+}
+
+.open_menu.active {
+  opacity: 1;
+  visibility: visible;
+  right: 0px;
+}
